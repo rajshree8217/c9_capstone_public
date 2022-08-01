@@ -1,0 +1,7 @@
+<form name="trainresults" method="POST" action="{{ url_for('use') }}">
+  <h1><center>IBM Churn Data - Model Trained</center></h1><br><br>
+  <label>Train Accuracy:</label>{{trnacc}}<br><br>
+  <label>Test Accuracy:</label>{{tstacc}}<br><br>
+  <label>Use the trained Model:</label>
+  <input type="submit" value="Use Model">
+</form>

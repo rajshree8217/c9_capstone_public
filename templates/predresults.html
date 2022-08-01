@@ -1,0 +1,59 @@
+
+<form name="predresults" method="POST" action="{{ url_for('use') }}">
+  <h1><center>IBM Churn Data - Predictions for new data</center></h1><br><br>
+            <table border="1">
+<!--The names below are displayed as table headers/labels-->
+                <tr>
+                    <th>CustomerID:</th>
+                    <th>Gender:</th>
+                    <th>SeniorCitizen:</th>
+                    <th>Partner:</th>
+					<th>Dependents:</th>
+					<th>Tenure:</th>
+					<th>PhoneService:</th>
+					<th>MultipleLines:</th>
+					<th>InternetService:</th>
+					<th>OnlineSecurity:</th>
+					<th>OnlineBackup:</th>
+					<th>DeviceProtection:</th>
+					<th>TechSupport:</th>
+					<th>StreamingTV:</th>
+					<th>StreamingMovies:</th>
+					<th>Contract:</th>
+					<th>PaperlessBilling:</th>
+					<th>PaymentMethod:</th>
+					<th>MonthlyCharges:</th>
+					<th>TotalCharges:</th>
+					<th>Prediction Made:</th>
+				</tr>
+<!--The names below have to match the new_df column names exactly-->
+				{% for index, row in data.iterrows() %}
+					<tr>
+                        <td>{{ row['CustomerID'] }}</td>
+                        <td>{{ row['Gender'] }}</td>
+                        <td>{{ row['SeniorCitizen'] }}</td>
+                        <td>{{ row['Partner'] }}</td>
+						<td>{{ row['Dependents'] }}</td>
+						<td>{{ row['Tenure'] }}</td>
+						<td>{{ row['PhoneService'] }}</td>
+						<td>{{ row['MultipleLines'] }}</td>
+						<td>{{ row['InternetService'] }}</td>
+						<td>{{ row['OnlineSecurity'] }}</td>
+						<td>{{ row['OnlineBackup'] }}</td>
+						<td>{{ row['DeviceProtection'] }}</td>
+						<td>{{ row['TechSupport'] }}</td>
+						<td>{{ row['StreamingTV'] }}</td>
+						<td>{{ row['StreamingMovies'] }}</td>
+						<td>{{ row['Contract'] }}</td>
+						<td>{{ row['PaperlessBilling'] }}</td>
+						<td>{{ row['PaymentMethod'] }}</td>
+						<td>{{ row['MonthlyCharges'] }}</td>
+						<td>{{ row['TotalCharges'] }}</td>
+						<td>{{ row['Prediction'] }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+        <br>
+	<label>Use the trained Model:</label>
+   <input type="submit" value="Use Model">
+</form>
